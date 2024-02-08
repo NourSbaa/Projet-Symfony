@@ -1,0 +1,29 @@
+{# templates/documents.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Certifications{% endblock %}
+
+{% block body %}
+    <div class="d-flex justify-content-center p-5 bg-image" id="bgimgdoc">
+        {{ form_start(certificationForm) }}
+        <div class="card p-2 w-300" style="width:800px;">
+            <div class="card-body">
+                <div class="mb-4">
+                {{ form_row(certificationForm.titre_certifications, { 'attr': {'class': 'form-control mb-3'} }) }}
+                </div>
+                <div class="mb-4">
+                {{ form_row(certificationForm.description_certifications, { 'attr': {'class': 'form-control mb-3'} }) }}
+                </div>
+                <div class="mb-4">
+                {{ form_row(certificationForm.image_certifications, { 'attr': {'class': 'form-control mb-3'} }) }}
+                </div>
+                <div class="d-flex justify-content-center">
+                    <button class="btn w-75 rounded" id="submitBtn" type="submit">Submit</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        {{ form_end(certificationForm) }}
+    </div>
+{% endblock %}

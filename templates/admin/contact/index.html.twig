@@ -1,0 +1,38 @@
+{# templates/admin.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+{% block body %}
+<body>
+    <div class="container">
+        <h2 class="text-center mt-4">Contacts: </h2>
+        <div class="d-flex justify-content-center align-items-center vh-50">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Email</th>
+                        <th>Message</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for contact in contacts %}
+                        <tr>
+
+                         <td>{{ contact.id }}</td>
+                            <td>{{ contact.nom }}</td>
+                            <td>{{ contact.prenom }}</td>
+                            <td>{{ contact.email }}</td>
+                            <td>{{ contact.message }}</td>
+                           
+        
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+{% endblock %}

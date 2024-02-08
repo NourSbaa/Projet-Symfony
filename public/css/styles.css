@@ -1,0 +1,113 @@
+body {
+    background-color: #ffffff;
+  }
+  
+  title{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration-color: rgb(4, 4, 94);
+  }
+  .bg-image{
+    background-image: url('../assets/polyback.png') !important;
+    background-size:2000px;
+  }
+  .btn-login{
+    background-color: blanchedalmond;
+    font-family:'Segoe UI', Tahoma, Verdana, sans-serif;
+    border-color: none ;
+  }
+  
+  
+  
+  .btn{
+    color: black !important;
+    background-color: rgb(225, 105, 30) !important;
+    background-color: rgb(225, 105, 30) !important;
+  }
+  
+  
+  #Footercontainer{
+    text-decoration: none !important;
+    color: black !important;
+  }
+  #AproposBtn:hover{
+    background-color: whitesmoke !important;
+    color:rgb(225, 105, 30)  !important;
+    border-color: rgb(225, 105, 30)  !important;
+  }
+  #AproposBtn{
+    background-color:rgb(225, 105, 30)  !important;
+    color: black !important;
+    border-color: rgb(225, 105, 30)  !important;
+    height: 60px;
+    width: 150px;
+  }
+  #submitBtn{
+    background-color:rgb(225, 105, 30) !important;
+    color: black !important;
+    border-color: rgb(225, 105, 30) !important;
+    height: 40px;
+    width: 100px;
+    
+  }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  footer{
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  #submitBtn:hover{
+    background-color: whitesmoke !important;
+    color:black !important;
+    border-color: rgbrgb(225, 105, 30) !important;
+  }
+  #bgimgdoc{
+    background-image: url('../assets/bgdoc1.jpg');
+    background-repeat: no-repeat !important;
+    background-size: cover;
+  }
+  #btnContact{
+    background-color:rgb(225, 105, 30) !important;
+    color: black !important;
+    border-color: rgb(225, 105, 30)!important;
+    height: 40px;
+    width: 100px;
+  }
+  #btnContact:hover{
+    background-color: rgb(225, 105, 30) !important;
+    color:black !important;
+    border-color: rgb(225, 105, 30) !important;
+  }
+  #conctactBg{
+    background-image: url('../assets/polyback.png');
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+  }
+  
+  #inscriptionCertif{
+    background-color:rgb(225, 105, 30) !important;
+    color: black !important;
+    border-color: rgb(225, 105, 30) !important;
+    height: 40px;
+    width: 100px;
+  
+  }
+  #inscriptionCertif:hover{
+    background-color: rgb(225, 105, 30) !important;
+    color:black !important;
+    border-color: rgb(225, 105, 30) !important;
+  }
+  .bgCertification{
+    background-image: url('../assets/bg.png');
+  }
+  

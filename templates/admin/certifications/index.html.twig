@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Certifications{% endblock %}
+
+{% block body %}
+<body>
+    <div class="container">
+        <footer>
+            <!-- Your footer content here -->
+        </footer>
+
+        <h2 class="text-center mt-4">Certifications: | <a href="{{ path('admin_certifications_new')}}" class="btn btn-info">Ajouter</a></h2>
+        <div class="d-flex justify-content-center align-items-center vh-50">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Titre Certifications</th>
+                        <th>Description Certifications</th>
+                        <th>Image Certifications</th>
+                        <th>Action</th>
+                        <th>Etudiant name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for certification in certifications %}
+                        <tr>
+                            <td>{{ certification.id }}</td>
+                            <td>{{ certification.titreCertifications }}</td>
+                            <td>{{ certification.descriptionCertifications }}</td>
+                            <td>
+                                <img src="{{ certification.imageCertifications }}" alt="Certification {{ certification.id }}" style="max-width: 100px;">
+                            </td>
+                            <td>
+                                <a href="{{ path('admin_certifications_edit', {'id': certification.id}) }}" class="btn btn-info">Edit</a>
+                                <a href="{{ path('admin_certifications_delete', {'id': certification.id}) }}" class="btn btn-danger">Delete</a>
+                            </td>
+                            <td>
+                                {% for etudiant in etudiants %}
+                                    {% for etudcertif in etudiant.certifications %}
+                                        {% if etudcertif == certification %}
+                                            <p>{{ etudiant.prenomEtudiants }} {{ etudiant.nomEtudiants }}</p>
+                                    {% endif %}
+                                    {% endfor %}
+                                {% endfor %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+{% endblock %}

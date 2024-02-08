@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+ {# login.html.twig #}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+<form method="post">
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+
+  <div class="container-fluid bg-image">
+    <div class="row justify-content-center align-items-center vh-100">
+      <div class="col-12">
+        <div class="card bg-white my-5 mx-auto" style="border-radius: 1rem; max-width: 500px;">
+          <div class="card-body p-5 d-flex flex-column">
+            <h2 class="fw-bold mb-2 text-center">Sign in</h2>
+            <p class="text-black-50 mb-3">Please enter your login and password!</p>
+            
+              <div class="mb-4">
+                <label for="inputEmail" class="form-label">Email address</label>
+                <input type="email" value="{{ last_username }}" class="form-control form-control-lg" id="inputEmail" name="email">
+              </div>
+              <div class="mb-4">
+                <label for="inputPassword" class="form-label">Password</label>
+                <input type="password" class="form-control form-control-lg" id="password" name="password">
+              </div>
+              
+
+    <input type="hidden" name="_csrf_token"
+           value="{{ csrf_token('authenticate') }}"
+    >
+
+    <button class="btn" type="submit">
+        Sign in
+    </button>
+     </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+{% endblock %}

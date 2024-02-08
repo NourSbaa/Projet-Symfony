@@ -1,0 +1,37 @@
+{# templates/certifications/index.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Les Certifications du PolyFc{% endblock %}
+
+{% block body %}
+    <div class="bgCertification">
+        <div class="d-flex justify-content-center p-5 mt-5">
+            <h1>Les Certifications du PolyFc</h1>
+        </div>
+        <div class="container">
+            <section class="row">
+                    {% set displayedCertifications = [] %}
+                    {% for certification in certifications %}
+                    <div class="col-4">
+                        <div class="card p-2 w-300" style="width:300px;">
+                            <img src="{{ certification.imageCertifications }}" class="card-img-top" alt="{{ certification.titreCertifications }}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ certification.titreCertifications }}</h5>
+                                <p class="card-text">{{ certification.descriptionCertifications }}</p>
+                                
+                                    
+                                        {% if  ( certification in etudiant.certifications) %}
+                                            <h3 class="card-text "style="color:red;">Already subscribed</h3>
+                                        {% else  %}
+                                            <a href="{{ path('certif_subscribe', {id: certification.id})}}" class="btn btn-success">Subscribe</a>
+                                        {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+    </section>
+            </div>
+
+    </div>
+{% endblock %}

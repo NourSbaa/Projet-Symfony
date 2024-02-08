@@ -1,0 +1,34 @@
+{# templates/offres_stage/index.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Les Offres de Stages{% endblock %}
+
+{% block body %}
+    <div class="bgCertification">
+        <div class="d-flex justify-content-center p-5 mt-5">
+            <h1>Les Offres de Stages</h1>
+        </div>
+
+        <div class="d-flex justify-content-center p-5 mt-5">
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+                {% for offreStage in offresStage %}
+                    <div class="col">
+                        <div class="card img-thumbnail shadow h-100">
+                            <img src="{{ offreStage.imageurl }}" class="card-img-top" alt="{{ offreStage.nom }}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ offreStage.nom }}</h5>
+                                <p class="card-text">{{ offreStage.description }}</p>
+                                 {% if  ( offreStage == etudiant.getStage()) %}
+                                            <h3 class="card-text "style="color:red;">Already subscribed</h3>
+                                        {% elseif etudiant.getStage() == null   %}
+                                            <a href="{{ path('stage_subscribe', {id: offreStage.id})}}" class="btn btn-success">Subscribe</a>
+                                        {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,50 @@
+{# templates/admin.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Stages{% endblock %}
+{% block body %}
+<body>
+    <div class="container">
+        <h2 class="text-center mt-4">Stages: | <a href="{{ path('admin_stages_new')}}" class="btn btn-info">Ajouter</a></h2>
+        <div class="d-flex justify-content-center align-items-center vh-50">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Titre Stage</th>
+                        <th>Description Stage</th>
+                        <th>Image Stage</th>
+                        <th>Action</th>
+                        <th>Etudiant name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for stage in stages %}
+                        <tr>
+                            <td>{{ stage.id }}</td>
+                            <td>{{ stage.nom }}</td>
+                            <td>{{ stage.description}}</td>
+                            <td>
+                                <img src="{{ stage.imageUrl }}" alt="Stage {{ stage.id }}" style="max-width: 100px;">
+                            </td>
+                            <td>
+                                <a href="{{ path('admin_stages_edit', {'id': stage.id}) }}" class="btn btn-info">Edit</a>
+                                <a href="{{ path('admin_stages_delete', {'id': stage.id}) }}" class="btn btn-danger">Delete</a>
+                            </td>
+                            <td>
+                                {% for etudiant in etudiants %}
+                                    {% if etudiant.id is not null and stage.getEtudiant() is not null %}
+                                        {% if stage.getEtudiant().id == etudiant.id %}
+                                            <p>{{ etudiant.prenomEtudiants }} {{ etudiant.nomEtudiants }}</p>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+{% endblock %}
